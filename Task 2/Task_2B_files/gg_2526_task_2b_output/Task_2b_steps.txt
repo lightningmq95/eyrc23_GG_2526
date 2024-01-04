@@ -1,0 +1,20 @@
+Team ID = 2526
+Trained weights drive link = "https://drive.google.com/file/d/1qNYo9b3gbK6KBEdbAty8-pbV_ZYDHNtL/view?usp=drive_link"
+
+###############################################################################
+'''
+Please write the complete steps taken by your team explaining how you completed Task 2B. It is adviced to be as elaborate as possible.
+
+1. We first read the task thoroughly and decided the tasks among ourselves such that each of us can work on the task and compile all the parts at the end.
+2. We saw youtube tutorials for how to classify images using CNN and transfer learning.
+3. We began by importing the necessary libraries including tensorflow and keras.
+4. We chose a pretrained CNN model like VGG16, ResNet50 and ExceptionNetB0 from tensorflow's "tf.keras.application" module.
+5. We prepared our image dataset, dividing the data into training and testing sets.
+6. At the end we chose ExceptionNetB0 pretrained model since it had higher accuracy than other pretrained models.
+7. We freezed the layers of pre-trained model to prevent them from being trained again.
+8. We added additional layers (dense, dropout, etc) on top of the pre-trained model to customize it for the task.
+9. Then we loaded the data from our local computer by using file operations and also getting help from the resources given to us about dealing with custom models.
+10. Then we split the data into train and validation.
+11. At around 8th epoch we got good accuracy of around 0.8750
+12. We then tested the new unseen data to ensure its generalization and accuracy.
+13. We then added the training model code into the boilerplate which was provided and ran the output executable file to get the required output.

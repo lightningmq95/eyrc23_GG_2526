@@ -1,0 +1,37 @@
+Team ID = 2526
+Trained weights drive link = "https://drive.google.com/file/d/1HSdv-8lZvcmD6-5F97LVc53SCubFaJ7U/view?usp=drive_link"    
+###############################################################################
+'''
+Please write the complete steps taken by your team explaining how you completed Task 2C. It is adviced to be as elaborate as possible.
+
+
+1. Understanding the Problem Statement:
+   The team collectively undertook a comprehensive review of the requirements and specifications for Task 2C as detailed in the eYRC 2023-24 theme documentation.
+
+2. Setting Up the Environment:
+  The team collaborated to ensure the installation of all necessary libraries and tools essential for image processing and deep learning. This involved setting up OpenCV, PyTorch, and other dependencies.
+
+3. Preparing the Arena Image:
+   Following predefined specifications or utilizing a provided tool, the team generated the arena image. The arena_image function was then employed to load and resize the generated arena image.
+
+4. Event Identification:
+   The team collaborated to implement the event_identification function, which extracts event images from predefined positions in the arena. Each extracted event image was resized to 50x50 pixels.
+   We upscaled the image using ai pretrained-model to get better results.
+
+5. Deep Learning Model:
+   The team collectively loaded a pre-trained PyTorch model (model.pth) using the classify_event function. Before passing each event image through the model, preprocessing steps were applied, including resizing and normalizing. The model was then used to classify each event into predefined classes such as combat, humanitarianaid, militaryvehicles, destroyedbuilding, and fire.
+
+6. Post-Processing and Output:
+  To handle post-processing, the team collectively created the classification function. This function processed the detected events and either printed or stored the results. The detected events were stored in the detected_events.txt file using the detected_list_processing function.
+
+7. Integration and Testing:
+   The team integrated all components into the main script and conducted thorough testing of its functionality with sample inputs to ensure correctness.
+
+8. Documentation:
+  Ensuring clarity and comprehensiveness, the team added detailed comments and docstrings to explain the purpose and usage of each function. Additionally, relevant information such as licenses, team ID, author list, and the script's purpose was included in the header comments.
+
+9. Submission:
+   The finalized script, along with any additional required files or documents, was collectively submitted for evaluation.
+
+10. Continuous Improvement:
+   Throughout the development process, the team considered optimizations or improvements in terms of code structure, efficiency, or accuracy based on feedback or additional testing.
