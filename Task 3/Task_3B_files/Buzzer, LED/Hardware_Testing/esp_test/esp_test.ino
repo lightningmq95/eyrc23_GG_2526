@@ -1,10 +1,10 @@
 #include <WiFi.h>
 
 // WiFi credentials
-const char* ssid = "Akash";                    //Enter your wifi hotspot ssid
-const char* password =  "Akash@3010";               //Enter your wifi hotspot password
+const char* ssid = "LightningMQ";                    //Enter your wifi hotspot ssid
+const char* password =  "AkkiMohapatra@3010";               //Enter your wifi hotspot password
 const uint16_t port = 8002;
-const char * host = "192.168.1.6";                   //Enter the ip address of your laptop after connecting it to wifi hotspot
+const char * host = "192.168.34.54";                   //Enter the ip address of your laptop after connecting it to wifi hotspot
 
 // External peripherals 
 int buzzerPin = 15;
@@ -16,8 +16,6 @@ WiFiClient client;
 
 String msg = "0";
 int counter = 0;
-
-
 
 void setup(){
    

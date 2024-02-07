@@ -1,0 +1,6 @@
+combat
+destroyed_buildings
+fire
+human_aid_rehabilitation
+military_vehicles
+unknown

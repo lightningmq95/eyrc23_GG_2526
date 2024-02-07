@@ -1,10 +1,10 @@
 #include <WiFi.h>
 
 // WiFi credentials
-const char* ssid = "JioFiber-Ynqef_5G";
-const char* password = "sohamguj@1234";
+const char* ssid = "LightningMQ95";
+const char* password = "AkkiMohapatra@3010";
 const uint16_t port = 8002;
-const char * host = "192.168.29.191";
+const char * host = "192.168.40.27";
 
 // Motor pin connections
 #define in1 16
