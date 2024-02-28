@@ -1,0 +1,71 @@
+IMAGE PROCESSING:
+1) My Machine Learning model is made using pytorch. 
+2) Then I downloaded a git repository having file called goin_modular for better results of my model.
+3) For faster training of my model I used CUDA.
+4) Then I set the number of epochs, batch_size and learning_rate.
+5) Then I loaded the image dataset which you gave having 5 classes and divided into 80:20 ratio for train and test split respectively.
+6) I defined all the 5 classes in my dataset.
+7) For better results I used the efficientnet_v2l pretrained model such that I can get accurate predictions.
+8) For image preprocessing I used the auto transforms which transforms the image and resizes it to 480 by 480.
+9) Then I downloaded the weights and the model of the efficientnet_v2l pretrained model.
+10) I freezed the base layers by setting the requires_grad = False.
+11) Then I used the torch.manual_seed function to generate random numbers during execution.
+12) Then for the in_features of the pretrained model I set it to 1280 and the out_features are set to the size of the class i.e 5.
+13) Then I recreated the classifier layer and seeded it to the target device (in my case is my GPU).
+14) Then I used crossEntropyLoss for creating an instance of the cross entropy loss function which combines softmax activation and negative log likelihood loss.
+15) For the optimizer I used torch.optim.Adam which is an adaptive learning rate optimizer.
+16) Then I started the timer to calculate the amount of time my model took for training.
+17) Then I stored the model, train_dataloader, test_dataloader, optimizer, loss_fn, epochs and the device in results.
+18) After my model got trained, I used the torch.save() function to save my model for making predictions on the events. 
+
+EVENT DETECTION:
+1) In here at first I imported all the required libraries like cv2, torch, torchvision PIL.Image, numpy etc.
+2) The webcam turns on for 5 seconds using the cv2 library and then captures a single frame after 5 seconds.
+2) Then I loaded my model.
+3) Then I defined the classes on which my model has been trained on.
+4) Then I transformed the images to the size on which the original images were trained i.e 480 by 480.
+5) For the classification of the images I then sent the transformed images to my GPU which returns the predicted event class.
+3) For the boundary box creation I used the method that the code will create all the boundary boxes available in that frame and I used the constaint that it should only display and pass the coordinates of those boundary boxes to my model whose area is in between 9000 to 13000.
+4) After the x, y, w and h coordinates are found it draws the boundary box and returns that coordinates to the image classification model.
+5) In this function the model is called which gives the predictions on the images inside the bounding box and returns the identified labels.
+8) Now using the cv2 library the bounding box along with their labels are printed above the images and on the terminal.
+9) After the model detects the images there is a function named priority_list in which the identified labels are passed in as a parameter. In that function the priority order has been given in a list according to the rule book.
+10) What it does is it takes the key values of the identified label and appends them in order of the priority in a txt file named priority list.
+11) For printing the same identified labels on the terminal I have mapped the original class names to labels for better understanding which gets printed in the terminal.
+11) At last the Arena Feed with the bounding boxes and labels are shown.
+
+LINE FOLLOWING:
+1) An Arduino code is used for controlling a robot using WiFi communication. 
+2) Once it establishes the connection, it prints the ip over which the WiFi connection has been set for esp32. This ip is then stored in python so that it establishes a socket connection between python file and arduino file over wifi
+3) In void loop, The code first checks if there is a client connected to the ESP32. It does this by evaluating the condition if (!client || !client.connected()).
+If there is no client connected or the existing client connection is lost, the code waits for a new client to connect.
+4) If there is a client connected and data is available to be read (client.available()), the code reads the incoming command character using client.read().
+Based on the received command, the code executes specific actions to control the motors or perform other tasks. In the provided code, commands '0', '1', and '2' are used to control different motor actions.
+5) The loop continuously checks the sensor readings to determine the path the robot should follow.
+6) digitalRead() is used to read the state of a digital pin. In this case, it reads the state of pins connected to IR sensors.
+7) These conditions are based on the sensor readings of the left (L), mid-left (ML), middle (M), mid-right (MR), and right (R) sensors.
+8) Each condition corresponds to a specific sensor configuration, indicating the position of the line relative to the robot.
+9) When the robot deviates from the desired path, corrective actions are taken to bring it back on track.
+10) There's a function called node_count() that performs specific actions based on the value of the counter variable.
+11) The counter variable increments when the robot reaches nodes in the arena.
+12)Depending on the value of the counter, different actions are performed, such as moving forward, turning left, or turning right.
+13)Various functions are defined to control the movement of the robot, such as moveForward(), turnLeft(), turnRight(), stopMotors(), etc. These functions set the appropriate motor pins to achieve the desired movement. 
+
+PATH PLANNING ALGORITHM:
+1)The environment is represented as a graph using NetworkX.
+Nodes in the graph correspond to specific locations in the environment, labeled as n1, n2, ..., n11, A, B, C, D, E.
+Edges between nodes represent possible paths between these locations, and they are weighted based on the distance between nodes.
+2)The find_shortest_path() function utilizes Dijkstra's algorithm implemented in NetworkX to compute the shortest path between two nodes in the graph.
+3)The algorithm takes the graph, source node (current position), and target node (next position) as input and returns the shortest path between them.
+4)The get_next_action() function determines the next action (direction and movement) the robot should take based on its current position, next position, and current direction.
+5)It considers the relative positions of the current and next nodes to determine whether the robot should move forward, turn left, turn right, or turn around.
+6)The main() function serves as the main entry point for the path planning algorithm.
+7)It iterates over each priority label (A, B, C, D, E) to prioritize tasks or locations based on these labels.
+8)For each priority label, it calculates the shortest path from the current node (robot's current position) to the next node associated with the priority label.
+9)If the current node corresponds to a location with a priority label (A, C, E), it is removed from the shortest path to avoid revisiting the same node unnecessarily.
+10)It then determines the sequence of actions needed to traverse the calculated shortest path and sends these actions to the Arduino device for execution.
+11)The code establishes a socket connection with an Arduino device to send instructions for robot movement.
+12)It sends each action (direction and movement) to the Arduino device over the socket connection, allowing the robot to execute the corresponding movement or action.
+13)It waits for acknowledgment from the Arduino device before sending the next action, ensuring that the robot has completed the previous action.
+14)The code includes signal handling to perform clean-up operations when the program is interrupted (e.g., by pressing Ctrl+C).
+15)Upon interruption, the program exits gracefully, closing the socket connection and ending execution.

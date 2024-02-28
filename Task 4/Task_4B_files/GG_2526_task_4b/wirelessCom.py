@@ -15,7 +15,7 @@ def cleanup():
     else:
         print("Socket is already closed")
 
-ip = "192.168.137.21"
+ip = "192.168.137.240"
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)

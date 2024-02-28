@@ -308,6 +308,7 @@ void turnRight() {
   digitalWrite(in3, LOW);
   digitalWrite(in4, LOW);
 }
+
 void pivot_right() {
 
   digitalWrite(in1, HIGH);
@@ -315,12 +316,14 @@ void pivot_right() {
   digitalWrite(in3, LOW);
   digitalWrite(in4, HIGH);
 }
+
 void turnLeft() {
   digitalWrite(in1, LOW);
   digitalWrite(in2, LOW);
   digitalWrite(in3, HIGH);
   digitalWrite(in4, LOW);
 }
+
 void pivot_left() {
   digitalWrite(in1, LOW);
   digitalWrite(in2, HIGH);

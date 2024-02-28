@@ -1,0 +1,2 @@
+Team GG_2526
+model file and weights = "https://drive.google.com/drive/folders/14nfcVEWaqP7tVHeJTMUrtvOe6Dt0xxeh?usp=sharing"
